@@ -30,7 +30,7 @@ def set_bg_from_local(image_path):
     st.markdown(css, unsafe_allow_html=True)
 
 # Path to image
-image_path = r"C:\\code\\NASA\\background.jpg"
+image_path = r"background.jpg"
 set_bg_from_local(image_path)
 
 # Connect to DB
