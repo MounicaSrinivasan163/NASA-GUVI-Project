@@ -36,10 +36,11 @@ set_bg_from_local(image_path)
 # Connect to DB
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="nasa_asteroid_db"
+        host="gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
+        user="3cv2ASCBfAqu698.root",
+        password="HP2EPslJTmy95ozj",
+        database="nasa_asteroid_db",
+        port=4000
     )
 
 # Predefined queries
