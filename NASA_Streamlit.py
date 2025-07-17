@@ -301,6 +301,7 @@ with tab3:
     if st.button("🔄 Reset Filters"):
         for key, val in DEFAULTS.items():
             st.session_state[key] = val
+        st.experimental_rerun() 
 
     conn = get_connection()
     cursor = conn.cursor(dictionary=True)
