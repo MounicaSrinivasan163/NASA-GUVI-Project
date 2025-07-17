@@ -309,24 +309,24 @@ with tab3:
     with st.form("filter_form"):
         st.markdown("### 🧪 Filter Asteroid Data")
         col1, col2, col3 = st.columns(3)
-
+    
         with col1:
-            st.session_state["magnitude"] = st.slider("🔆 Absolute Magnitude (H)", 10.0, 50.0, value=st.session_state["magnitude"])
-            st.session_state["diameter_min"] = st.slider("📏 Min Diameter (km)", 0.0, 5.0, value=st.session_state["diameter_min"])
-            st.session_state["diameter_max"] = st.slider("📏 Max Diameter (km)", 0.0, 10.0, value=st.session_state["diameter_max"])
-
+            st.slider("🔆 Absolute Magnitude (H)", 10.0, 50.0, key="magnitude")
+            st.slider("📏 Min Diameter (km)", 0.0, 5.0, key="diameter_min")
+            st.slider("📏 Max Diameter (km)", 0.0, 10.0, key="diameter_max")
+    
         with col2:
-            st.session_state["velocity"] = st.slider("🚀 Velocity (kmph)", 5000, 200000, value=st.session_state["velocity"])
-            st.session_state["astro_dist"] = st.slider("🌌 Astronomical Unit", 0.0, 0.6, value=st.session_state["astro_dist"])
-            st.session_state["miss_km"] = st.slider("🪐 Miss Distance (km)", 5000, 80000000, value=st.session_state["miss_km"])
-
+            st.slider("🚀 Velocity (kmph)", 5000, 200000, key="velocity")
+            st.slider("🌌 Astronomical Unit", 0.0, 0.6, key="astro_dist")
+            st.slider("🪐 Miss Distance (km)", 5000, 80000000, key="miss_km")
+    
         with col3:
-            st.session_state["miss_lunar"] = st.slider("🌗 Miss Distance (Lunar)", 0.0, 200.0, value=st.session_state["miss_lunar"])
-            st.session_state["date_range"] = st.date_input("🗕️ Date Range", value=st.session_state["date_range"])
-            st.session_state["hazardous"] = st.selectbox("☢️ Hazardous?", ["All", "Yes", "No"],
-                index=["All", "Yes", "No"].index(st.session_state["hazardous"]))
-
+            st.slider("🌗 Miss Distance (Lunar)", 0.0, 200.0, key="miss_lunar")
+            st.date_input("🗕️ Date Range", key="date_range")
+            st.selectbox("☢️ Hazardous?", ["All", "Yes", "No"], key="hazardous")
+    
         submit = st.form_submit_button("🔍 Apply Filters")
+
 
     if submit:
         query = """
